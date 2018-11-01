@@ -10,13 +10,13 @@ public class Gerencia {
 	}
 	
 	
-	public void cadastrarFuncionario(String nome, double horasTrabalhadas, double valorPorHora, double bonus) {
+	public void cadastrarFuncionario(String nome, int horasTrabalhadas, double valorPorHora, double bonus) {
 		FuncionarioSenior funcionario  = new FuncionarioSenior( nome,  horasTrabalhadas,  valorPorHora, bonus);
 		lista.add(funcionario);
 		
 	}
 	
-	public void cadastrarFuncionario(String nome, double horasTrabalhadas, double valorPorHora) {
+	public void cadastrarFuncionario(String nome, int horasTrabalhadas, double valorPorHora) {
 		Funcionario funcionario  = new Funcionario( nome,  horasTrabalhadas,  valorPorHora);
 		lista.add(funcionario);
 		
@@ -24,7 +24,13 @@ public class Gerencia {
 	
 	public void listar() {
 		for (Funcionario funcionario : lista) {
-			System.out.println(funcionario.exibir());
+			if(funcionario instanceof FuncionarioSenior) {
+				System.out.println(funcionario.exibir());
+				}else {
+				System.out.println(funcionario.exibir());
+				}
+			
+			
 		}
 	}
 	

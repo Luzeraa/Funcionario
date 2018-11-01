@@ -3,11 +3,12 @@ package loja;
 public class Funcionario {
 	
 		private String nome;
-		private double horasTrabalhadas, valorPorHora;
+		private double valorPorHora;
+		private int horasTrabalhadas;
 
 		public Funcionario() {}
 		
-		public Funcionario(String nome, double horasTrabalhadas, double valorPorHora) {
+		public Funcionario(String nome, int horasTrabalhadas, double valorPorHora) {
 			this.nome = nome;
 			this.horasTrabalhadas = horasTrabalhadas;
 			this.valorPorHora = valorPorHora;
@@ -25,7 +26,7 @@ public class Funcionario {
 			return horasTrabalhadas;
 		}
 
-		public void setHorasTrabalhadas(double horasTrabalhadas) {
+		public void setHorasTrabalhadas(int horasTrabalhadas) {
 			this.horasTrabalhadas = horasTrabalhadas;
 		}
 

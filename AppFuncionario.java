@@ -5,16 +5,19 @@ import java.util.Scanner;
 public class AppFuncionario {
     
     public static void main(String[] args) {
-    	 Scanner ler = new Scanner(System.in);
-         
-        Funcionario funcionario = new Funcionario();
+    	
+    	Scanner input = new Scanner(System.in);
+    	Scanner ler = new Scanner(System.in);
+
+    	Funcionario funcionario = new Funcionario();
         FuncionarioSenior funcionarioSenior = new FuncionarioSenior ();
         Gerencia gerencia = new Gerencia();
     
        
         
         String nome, opcaoSenior;
-        double horasTrabalhadas, valorPorHora, bonus;   
+        double valorPorHora, bonus;  
+        int horasTrabalhadas;
         int opcao = 0;
         
         
@@ -31,7 +34,7 @@ public class AppFuncionario {
         			+ "7 - Fechar");
         	
         	System.out.println("Digite a opcao");
-        	opcao = ler.nextInt();
+        	opcao = input.nextInt();
         	
         	
         	switch(opcao) {
@@ -40,19 +43,20 @@ public class AppFuncionario {
         			System.out.println("Digite o nome do funcionario: " );
         			nome = ler.nextLine();
         			
-        			System.out.println("Digite o valor de horas trabalhadas: " );
-        			horasTrabalhadas = ler.nextDouble();
+        			
+        			System.out.println("Digite o valor de horas trabalhadas: ");
+        			horasTrabalhadas = input.nextInt();
         			
         			System.out.println("Digite o valor por hora: " );
-        			valorPorHora=  ler.nextDouble();
+        			valorPorHora=  input.nextDouble();
         			
         			System.out.println("O funcionario que voce ira cadastrar é Senior? \n"
         					+ "Digite sim ou nao");
-        			opcaoSenior = ler.nextLine();
+        			opcaoSenior = ler.next();
         			
         			if(opcaoSenior.equalsIgnoreCase("sim")) {
         				System.out.println("Digite o bonus do funcionario(se tiver) " );
-            			bonus = ler.nextDouble();
+            			bonus = input.nextDouble();
         			
             			gerencia.cadastrarFuncionario(nome, horasTrabalhadas, valorPorHora, bonus);
         			}
